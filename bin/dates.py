@@ -5,7 +5,7 @@ def add_weeks(d, weeks):
   delta = datetime.timedelta(days=days)
   return d + delta
 
-u = datetime.datetime.strptime("2021-01-02","%Y-%m-%d")
-l1 = add_weeks(u, 4)
+# u = datetime.datetime.strptime("2021-01-02","%Y-%m-%d")
+# l1 = add_weeks(u, 4)
 
-print(l1)
+# print(l1)
