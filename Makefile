@@ -5,6 +5,9 @@ init::
 	pip install --upgrade pip setuptools
 	pip install -r requirements.txt
 
+test:
+	python -m pytest -vvs tests
+
 black:
 	black .
 
