@@ -12,5 +12,61 @@
         "name": "Patterns",
         "description": "",
         "activities": ""
+    },
+    "3": {
+        "start": 11.5,
+        "duration": 1,
+        "name": "Smooth transitions",
+        "description": "",
+        "activities": ""
+    },
+    "4": {
+        "start": 14.5,
+        "duration": 5,
+        "name": "Events",
+        "description": "",
+        "activities": ""
+    },
+    "5": {
+        "start": 22.5,
+        "duration": 4,
+        "name": "Relationships",
+        "description": "",
+        "activities": ""
+    },
+    "6": {
+        "start": 33.5,
+        "duration": 4,
+        "name": "Categories",
+        "description": "",
+        "activities": ""
+    },
+    "7": {
+        "start": 41.5,
+        "duration": 5,
+        "name": "Sequences",
+        "description": "",
+        "activities": ""
+    },
+    "8": {
+        "start": 50.5,
+        "duration": 4,
+        "name": "Programs",
+        "description": "",
+        "activities": ""
+    },
+    "9": {
+        "start": 59.5,
+        "duration": 5,
+        "name": "Principles",
+        "description": "",
+        "activities": ""
+    },
+    "10": {
+        "start": 70.5,
+        "duration": 5,
+        "name": "Systems",
+        "description": "",
+        "activities": ""
     }
 }
