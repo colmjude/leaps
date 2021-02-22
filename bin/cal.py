@@ -7,12 +7,13 @@ def add_alarm():
 
 
 def ics_event(name, start_date):
-  a = add_alarm()
-  e = Event(alarms=[a])
-  e.name = name
-  u = start_date
-  e.begin = u
-  return e
+    a = add_alarm()
+    e = Event(alarms=[a])
+    e.name = name
+    u = start_date
+    e.begin = u
+    return e
+
 
 def create_ics_event(d=None):
     c = Calendar()
@@ -22,4 +23,4 @@ def create_ics_event(d=None):
     return c
 
 
-#print(str(create_ics_event()))
+# print(str(create_ics_event()))

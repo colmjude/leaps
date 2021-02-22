@@ -16,6 +16,5 @@ def leap_dates(due_date, leap_start):
 leaps_data = read_json_file("leaps.json")
 
 for n, data in leaps_data.items():
-  leap = Leap(n, leap_dates(DUE_DATE, data["start"]), data['name'])
-  leap.event()
-
+    leap = Leap(n, leap_dates(DUE_DATE, data["start"]), data["name"])
+    leap.event()
