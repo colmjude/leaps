@@ -42,7 +42,7 @@ class Leap:
         self.duration = duration
 
     def event(self):
-        return ics_event(self.name, self.start, self.duration)
+        return ics_event(f"Leap {self.num}: {self.name}", self.start, self.duration)
 
     def print(self):
         print(f"Leap {self.num} - {self.name}")
