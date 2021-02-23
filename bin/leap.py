@@ -1,4 +1,5 @@
 import datetime
+import math
 
 from ics import Calendar
 
@@ -25,19 +26,23 @@ class Leaps:
     def calendar(self):
         cal = Calendar()
         for n, data in self.data.items():
-            leap = Leap(n, leap_dates(self.DUE_DATE, data["start"]), data["name"])
+            duration = math.floor(data["duration"] * 7)
+            leap = Leap(
+                n, leap_dates(self.DUE_DATE, data["start"]), data["name"], duration
+            )
             cal.events.add(leap.event())
         return cal
 
 
 class Leap:
-    def __init__(self, num, start, name):
+    def __init__(self, num, start, name, duration):
         self.num = num
         self.start = start
         self.name = name
+        self.duration = duration
 
     def event(self):
-        return ics_event(self.name, self.start)
+        return ics_event(self.name, self.start, self.duration)
 
     def print(self):
         print(f"Leap {self.num} - {self.name}")

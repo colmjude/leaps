@@ -6,12 +6,15 @@ def add_alarm():
     return DisplayAlarm(datetime.timedelta(days=0.5))
 
 
-def ics_event(name, start_date):
+def ics_event(name, start_date, duration=None):
     a = add_alarm()
     e = Event(alarms=[a])
     e.name = name
     u = start_date
     e.begin = u
+    if duration:
+        d = datetime.timedelta(days=duration)
+        e.duration = d
     return e
 
 
