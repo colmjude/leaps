@@ -12,10 +12,6 @@ def leap_dates(due_date, leap_start):
     return start_date
 
 
-def create_calendar():
-    return Calendar()
-
-
 class Leaps:
     DUE_DATE = datetime.datetime.strptime("2021-01-02", "%Y-%m-%d")
 
@@ -27,7 +23,7 @@ class Leaps:
         return read_json_file(self.data_file)
 
     def calendar(self):
-        cal = create_calendar()
+        cal = Calendar()
         for n, data in self.data.items():
             leap = Leap(n, leap_dates(self.DUE_DATE, data["start"]), data["name"])
             cal.events.add(leap.event())
