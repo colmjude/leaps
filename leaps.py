@@ -6,9 +6,10 @@ from bin.leap import Leaps, Leap
 
 DUE_DATE = datetime.datetime.strptime("2021-01-02", "%Y-%m-%d")
 
-leaps = Leaps("leaps.json")
+leaps = Leaps(DUE_DATE, "leaps.json")
 # print(leaps.calendar())
-write_to_file("leaps.ics", str(leaps.calendar()))
+cal = leaps.calendar()
+write_to_file("leaps.ics", str(cal))
 
 # for n, data in leaps_data.items():
 #     leap = Leap(n, leap_dates(DUE_DATE, data["start"]), data["name"])

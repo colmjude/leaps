@@ -14,9 +14,8 @@ def leap_dates(due_date, leap_start):
 
 
 class Leaps:
-    DUE_DATE = datetime.datetime.strptime("2021-01-02", "%Y-%m-%d")
-
-    def __init__(self, path_to_data="leaps.json"):
+    def __init__(self, due_date, path_to_data="leaps.json"):
+        self.due_date = due_date
         self.data_file = path_to_data
         self.data = self.read_csv()
 
@@ -28,7 +27,7 @@ class Leaps:
         for n, data in self.data.items():
             leap = Leap(
                 n,
-                leap_dates(self.DUE_DATE, data["start"]),
+                leap_dates(self.due_date, data["start"]),
                 data["name"],
                 data["duration"],
             )
