@@ -21,7 +21,7 @@ class Leaps:
         self.data = self.read_csv()
 
     def read_csv(self):
-        return read_json_file(self.data_file)
+        return read_json_file(self.data_file, True)
 
     def calendar(self):
         cal = Calendar()
@@ -42,7 +42,13 @@ class Leap:
         self.duration = duration
 
     def event(self):
-        return ics_event(f"Leap {self.num}: {self.name}", self.start, self.duration)
+        event = ics_event(
+            f"Leap {self.num}: {self.name}",
+            self.start,
+            self.duration,
+        )
+        event.make_all_day()
+        return event
 
     def print(self):
         print(f"Leap {self.num} - {self.name}")
