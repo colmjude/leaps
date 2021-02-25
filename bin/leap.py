@@ -26,26 +26,30 @@ class Leaps:
     def calendar(self):
         cal = Calendar()
         for n, data in self.data.items():
-            duration = math.floor(data["duration"] * 7)
             leap = Leap(
-                n, leap_dates(self.DUE_DATE, data["start"]), data["name"], duration
+                n,
+                leap_dates(self.DUE_DATE, data["start"]),
+                data["name"],
+                data["duration"],
             )
             cal.events.add(leap.event())
         return cal
 
 
 class Leap:
-    def __init__(self, num, start, name, duration):
+    def __init__(self, num, start, name, duration_in_weeks):
         self.num = num
         self.start = start
         self.name = name
-        self.duration = duration
+        self.duration_in_weeks = duration_in_weeks
 
     def event(self):
+        # don't double count the start day
+        days = math.floor(self.duration_in_weeks * 7) - 1
         event = ics_event(
             f"Leap {self.num}: {self.name}",
             self.start,
-            self.duration,
+            days,
         )
         event.make_all_day()
         return event
